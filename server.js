@@ -25,6 +25,6 @@ nunjucks.configure("views", { //cofigurando o caminho; de onde ele vai buscar o 
 
 
 // server vai ficar escutando a porta 5000
-server.listen(3000, function(){ // a função vai ser executada assim que escutar o server pelo npm start
+server.listen(5000, function(){ // a função vai ser executada assim que escutar o server pelo npm start
     console.log("SERVER TA NAICE");
 })

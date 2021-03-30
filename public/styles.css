@@ -50,24 +50,66 @@ nav a.active{
 
 nav a:hover{
     color: rgb(230, 228, 228);
+    transition: 700ms;
 
 }
 
 
 nav a::after{
     content: "";
-    width: 0%;
+    width: 100%;
     height: 2px;
     background-color: var(--color-text);
     position: absolute;
     left: 0;
-    bottom: -8px;
+    bottom: -14px;
+    opacity: 0;
 }
 
 
 nav a:hover::after{
-    width:100%;
+    opacity: 1;
+    bottom: -8px;
 
-    /* transition: *o que será mudado* *duração* *ease-in-out* ; */
-    transition: width 500ms ease-in-out ;
+
+    /* transition: *o que será mudado* *duração* *curva bezier* *delay* */
+    transition: all 700ms cubic-bezier(0.24, 0.11, 0.14, 0.99) ;
+}
+
+
+/* ============== CARD ================ */
+.card {
+    background-color:var(--color-text);
+    width: 800px;
+    height:400px;
+    
+    margin:40px auto;
+    text-align:center;
+
+    border-radius: 17px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    
+    box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.242) ;
+
+    /*animation*/
+    opacity: 0;
+    animation-name:up ;
+    animation-duration: 600ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards; /*usando o fowards p card vai permanecer do mesmo jeito que estava ao final a animação */
+}
+
+@keyframes up {
+    0% {
+        transform:translateY(15px) ;
+    }100%{
+        opacity: 1;
+    }
+}
+
+
+.avatar{
 }
