@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html >
+  <head>
+
+    {% block head%}
+    <title> Spaceship Manager </title>
+    {% endblock %}
+
+
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  
+</head>
+  <body>
+    <nav>
+      <a href="/" class="active">Captains</a>
+      <a href="/crew">Crew</a>
+    </nav>
+
+
+    {% block content %}{% endblock %}
+
+
+  </body>
+</html>

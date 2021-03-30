@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@300;400;600;800&display=swap');
+
+:root{
+   --color-background:#151515;
+   --color-text:#b4a5a5;
+    --color-purple:#301b3f;
+
+
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	border: none;
+	font: inherit;
+	vertical-align: baseline;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* font-family: 'Poppins', sans-serif; */
+
+body{
+    background-color: var(--color-background) ;
+    color: var(--color-text);
+}
+
+nav{
+    background-color: var(--color-purple);
+    width: 100%;
+    padding: 32px;
+    text-align: center;
+    box-sizing: border-box;/*vai levar o conteudo ate o limite da largura do conteúdo*/
+}
+
+nav a{
+    font-size: 22px;
+    text-decoration: none;
+    color: var(--color-text);
+    position: relative;
+}
+
+nav a + a{ /*operando somente no a que for antecedido por um a "Segundo a"*/
+    margin-left: 32px;
+}
+
+nav a.active{
+    color: rgb(230, 228, 228);
+    font-weight: bold;
+}
+
+nav a:hover{
+    color: rgb(230, 228, 228);
+
+}
+
+
+nav a::after{
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: var(--color-text);
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+}
+
+
+nav a:hover::after{
+    width:100%;
+
+    /* transition: *o que será mudado* *duração* *ease-in-out* ; */
+    transition: width 500ms ease-in-out ;
+}
