@@ -5,7 +5,7 @@ const routes = require('./routes')
 
 const server = express() // a variável virou uma função
 
-
+server.use(express.urlencoded({extended: true})) // vai fzer funcionar o res.body; pois antes o submit era acionado, a página ia para o req.body mas não aparecia nada; agora todos as informações que foram dadas para criar um novo membro se organizam na pagina em formato de objeto
 
 
 //trazendo o css pelo server

@@ -4,7 +4,25 @@
 const fs =require('fs')//file sistem
 const data =require('./data.json')
 
+exports.show = function(req,res){
+    //req.query.id = url.../.../?id=1
+    //req.body = pega os dados do formulário quando a gente manda através do post
+    //req.params.id = mandar direto na url ex: url.../../:id
 
+
+    //desetruturando o req.params
+    const { id }  = req.params //retirando o id e fazendo com que ele seja uma variável
+
+    const foundCaptain = data.captains.find(function(captain) {
+        //retornar o captain.id quando ele for igual ao id, criado na desestruturação
+        return captain.id == id
+    })
+
+    //se o find não encontrar o capitão
+    if (!foundCaptain) {
+        return res.send("Cap not found, sorry Marvel stan")
+    }
+}
 
 //post
 exports.post = function(req, res) {
@@ -29,7 +47,7 @@ exports.post = function(req, res) {
 
 
     //desestruturando objeto req.body
-    let {id,
+    let {
         avatar_url,
         name,
         ocupation,
@@ -54,14 +72,14 @@ exports.post = function(req, res) {
 
 
     //[{...}]
-    data.captains.push(
+    data.captains.push({
         id,
         avatar_url,
         name,
         ocupation,
         origin,
         services,
-        createdAt)//[{...},{...}]  //vai adicionando sempre mais um array = não mais apagando e escrevendo novamente os dados recebidos 
+        createdAt})//[{...},{...}]  //vai adicionando sempre mais um array = não mais apagando e escrevendo novamente os dados recebidos 
 
 
 
