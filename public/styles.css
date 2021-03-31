@@ -4,6 +4,7 @@
    --color-background:#151515;
    --color-text:#b4a5a5;
     --color-purple:#301b3f;
+    --color0-blue:#2c2f42;
 
 
 }
@@ -33,6 +34,7 @@ nav{
 }
 
 nav a{
+    font-family: Recursive;
     font-size: 22px;
     text-decoration: none;
     color: var(--color-text);
@@ -50,24 +52,169 @@ nav a.active{
 
 nav a:hover{
     color: rgb(230, 228, 228);
+    transition: 700ms;
 
 }
 
 
 nav a::after{
     content: "";
-    width: 0%;
+    width: 100%;
     height: 2px;
     background-color: var(--color-text);
     position: absolute;
     left: 0;
-    bottom: -8px;
+    bottom: -14px;
+    opacity: 0;
 }
 
 
 nav a:hover::after{
-    width:100%;
+    opacity: 1;
+    bottom: -8px;
 
-    /* transition: *o que será mudado* *duração* *ease-in-out* ; */
-    transition: width 500ms ease-in-out ;
+
+    /* transition: *o que será mudado* *duração* *curva bezier* *delay* */
+    transition: all 700ms cubic-bezier(0.24, 0.11, 0.14, 0.99) ;
+}
+
+
+/* ============== CARD ================ */
+.card {
+    background-color:var(--color-text);
+    width: 800px;
+    min-height:400px;
+    
+    margin:40px auto;
+    text-align:center;
+
+    border-radius: 32px  16px 16px 32px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    
+    box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.242) ;
+    
+
+    /*animation*/
+    opacity: 0;
+    animation-name:up ;
+    animation-duration: 600ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards; /*usando o fowards p card vai permanecer do mesmo jeito que estava ao final a animação */
+}
+
+
+.avatar{
+    border-radius: 16px 0 0 16px;
+}
+
+
+.details{
+    color: var(--color0-blue);
+    text-align: left;
+    padding: 32px;
+}
+.details h3{
+    font-family: Recursive;
+    font-weight: 900;
+    font-size: 28px;
+    color: var(--color-purple);
+    letter-spacing:1px;
+
+
+    animation-name: up;
+    animation-delay: 0.2s;
+    animation-duration: 400ms;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+
+}
+
+.details .item{
+    border-bottom: 1px solid var(--color-background);
+    padding: 16px 0;
+    
+    animation-name: up;
+    animation-delay: 0.2s;
+    animation-duration: 400ms;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+
+    
+}
+
+.details .item:last-child{/*opera no último elemento*/
+    border:none;
+}
+
+.details .item div:nth-child(1){/*vai pegar a primeira div*/
+    font-size: 1em;
+    line-height: 24px;
+    letter-spacing: 0.7px;
+
+}
+
+.details .item div:nth-child(2){/*vai pegar a segunda div*/
+    color: var(--color-purple);
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+/*label*/
+.details .item div:nth-child(2) span{
+    padding: 8px 16px;
+    font-size: 0.6em;
+    background-color: var(--color-purple) ;
+    color: var(--color-text);
+    border-radius: 1em;
+    margin-top: 8px;
+    display: inline-block; /*Ativar o margin-top para o span sem ocupar a linha toda*/
+    text-transform: uppercase;
+
+
+}
+
+
+/*====================forms====================*/
+
+input{
+    width: 100%;
+    outline-color: var(--color-purple);
+    background: #ffffff73;
+    padding: 4px;
+    border-radius: 8px;
+    border:1px var(--color-purple) solid;
+}
+
+input::placeholder{
+    font-size: 16px;
+    font-weight: normal;
+    color: var(--color-purple);
+    opacity: 60%;
+}
+
+button[type="submit"]{
+    padding: 8px 32px;
+    background-color: var(--color-purple);
+    color: var(--color-text);
+    border-radius: 8px;
+    font-weight: 800;
+    margin-top: 16px;
+    width: 100%;
+}
+
+
+
+
+/*animations*/
+@keyframes up {
+    0% {
+        transform:translateY(15px) ;
+    }100%{
+        opacity: 1;
+    }
 }

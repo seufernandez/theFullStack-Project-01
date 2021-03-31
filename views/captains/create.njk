@@ -1,0 +1,73 @@
+{% extends "layout.njk" %}
+
+
+{% block content %}
+    <form 
+    class="card"
+    method="POST"
+     action="/captains"> {#vai enviar os dados para a pasta instructors #}
+        <section 
+            class="avatar"
+            style="background: url(https://assets.bigcartel.com/product_images/222985918/Dolphin+-+WM.jpg?auto=format&fit=max&w=1000) no-repeat center center / cover;"></section>
+        
+        <section class="details">
+            <h3>New Captain</h3>
+
+                <div class="item">
+                    <div>Avatar Url</div>
+                    <div>
+                        <input 
+                        type="url"
+                        name="avatar_url"
+                        placeholder="http://">
+                    </div>
+                </div>
+
+
+                <div class="item">
+                    <div>Captain</div>
+                    <div>
+                        <input 
+                        type="text"
+                        name="name"
+                        placeholder="Your name">
+                    </div>
+                </div>
+        
+                <div class="item">
+                    <div>Ocupation</div>
+                    <div>
+                        <input 
+                        type="text" 
+                        name="ocupation"
+                        placeholder="Vogons skip this one :)">
+                    </div>  
+                </div>
+
+                <div class="item">
+                    <div>Origin Planet</div>
+                    <div>
+                        <input 
+                        type="text" 
+                        name="origin"
+                        placeholder="tell me your homies don't write poetry">
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div>Personal Features</div>
+                    <div>
+                        <input 
+                        type="text" 
+                        name="services"
+                        placeholder="Tell us your skills separating by comma ;)">
+                    </div>
+                </div>
+
+                <Button 
+                type="submit">Save</Button>
+            
+
+        </section>
+    </form>
+{% endblock %}
