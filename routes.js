@@ -15,6 +15,7 @@ routes.get('/captains/create', function(req, res) {
     return res.render('captains/create')
 })
 
+
 routes.get('/captains/:id', captains.show)
 
 

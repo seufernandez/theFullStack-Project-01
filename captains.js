@@ -10,7 +10,7 @@ exports.show = function(req,res){
     //req.params.id = mandar direto na url ex: url.../../:id
 
 
-    //desetruturando o req.params
+    //desetruturando o req.params, dentro do req params esta retirando o id
     const { id }  = req.params //retirando o id e fazendo com que ele seja uma variável
 
     const foundCaptain = data.captains.find(function(captain) {
@@ -46,7 +46,7 @@ exports.post = function(req, res) {
     }
 
 
-    //desestruturando objeto req.body
+    //desestruturando objeto req.body pra colocar no data json
     let {
         avatar_url,
         name,
