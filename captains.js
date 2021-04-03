@@ -24,7 +24,7 @@ exports.show = function(req,res){
         return res.send("Cap not found, sorry Marvel stan")
     }
      return res.render("captains/show", {captain: foundCaptain}) // lá no html vai receber o objeto "captain" que acabei de declarar e vaicolocar os dados do foundCaptain
-
+}
 //post
 exports.post = function(req, res) {
     
