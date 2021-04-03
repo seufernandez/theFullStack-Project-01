@@ -1,0 +1,44 @@
+{% extends "layout.njk" %}
+
+
+{% block content %}
+    <div class="card">
+        <section 
+            class="avatar"
+            style="background: url({{avatar_url}}) no-repeat center center / cover;"></section>
+        
+        <section class="details">
+            <h3>Details</h3>
+
+                <div class="item">
+                    <div>Captain</div>
+                    <div>Zaphod Beeblebrox</div>
+                </div>
+        
+                <div class="item">
+                    <div>Ocupation</div>
+                    <div>President of the Galaxy</div>
+                </div>
+
+                <div class="item">
+                    <div>Origin</div>
+                    <div>Betelgeuse V</div>
+                </div>
+
+                <div class="item">
+                    <div>Personal Features</div>
+                    <div>
+                        <span>Clever</span>
+                        <span>Imaginative</span>
+                        <span>irresponsible</span>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div>Joined in</div>
+                    <div>March/1978</div>
+                </div>
+
+        </section>
+    </div>
+{% endblock %}

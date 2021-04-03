@@ -15,14 +15,15 @@ exports.show = function(req,res){
 
     const foundCaptain = data.captains.find(function(captain) {
         //retornar o captain.id quando ele for igual ao id, criado na desestruturação
-        return captain.id == id
-    })
+        return captain.id == id // retorna true or false, está basicamente comparando se o id do params tem no jso
+        })
 
-    //se o find não encontrar o capitão
+
+    //se o find não encontrar o capitão, quando eu colocar um id não existente
     if (!foundCaptain) {
         return res.send("Cap not found, sorry Marvel stan")
     }
-}
+     return res.render("captains/show", {captain: foundCaptain}) // lá no html vai receber o objeto "captain" que acabei de declarar e vaicolocar os dados do foundCaptain
 
 //post
 exports.post = function(req, res) {
