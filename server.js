@@ -1,15 +1,16 @@
 const express = require("express"); // require = funcao do js para trazer uma dependência pra dentro da variável
 const nunjucks = require('nunjucks');
 const routes = require('./routes')
-
+const methodOverride = require('method-override')
 
 const server = express() // a variável virou uma função
 
 server.use(express.urlencoded({extended: true})) // vai fzer funcionar o res.body; pois antes o submit era acionado, a página ia para o req.body mas não aparecia nada; agora todos as informações que foram dadas para criar um novo membro se organizam na pagina em formato de objeto
 
 
-//trazendo o css pelo server
+//trazendo o css pelo server 
 server.use(express.static('public'))// vai observar a pasta public para servir os arquivos estáticos
+server.use(methodOverride('_method'))
 server.use(routes)
 
 //Configurando a Template Engine

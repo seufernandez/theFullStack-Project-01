@@ -197,7 +197,8 @@ input::placeholder{
     opacity: 60%;
 }
 
-button[type="submit"]{
+button[type="submit"],
+a.button{
     padding: 8px 32px;
     background-color: var(--color-purple);
     color: var(--color-text);
@@ -205,7 +206,94 @@ button[type="submit"]{
     font-weight: 800;
     margin-top: 16px;
     width: 100%;
+    border: 2px solid var(--color-purple);
+
 }
+
+
+a.button {
+    display: block;
+    width: 40px;
+    margin-top:24px ;
+    margin-left:70%;
+
+    text-align: center;
+
+    text-decoration: none;
+}
+
+/*FORM DELETE*/
+#form-delete button[type="submit"]{
+    margin-top: 8px;
+    border: 2px dashed var(--color-purple);
+    background:#301b3f41 ;
+    color: var(--color-purple);
+    padding: 8px;
+}
+
+
+
+
+/*==============INDEX TABLE==================*/
+
+
+.table-container {
+    display: block;
+    color: var(--color-purple);
+
+    padding: 40px;
+    box-sizing: border-box;
+
+
+
+
+}
+
+.table-container table{
+    border-spacing:0;
+}
+
+.table-container thead tr th,
+.table-container tbody tr td{
+    text-align: left;
+}
+
+/* colunas do body e colunas do head */
+td, th {
+    padding: 16px;
+    border-bottom: 1px solid var(--color0-blue);
+
+}
+
+/* tirando a borda da ultima célula do tbody tr */
+tbody tr:last-child td{
+    border-bottom: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
