@@ -15,9 +15,14 @@ routes.get("/", function (req, res) {
 
 routes.get("/captains", captains.index);
 
+<<<<<<< HEAD
 routes.get("/captains/create", function (req, res) {
   return res.render("captains/create");
 });
+=======
+
+routes.get('/captains/:id', captains.show)
+>>>>>>> b1912fafdcc547e7fcdc70cccc26f143448889c6
 
 routes.get("/captains/:id", captains.show);
 

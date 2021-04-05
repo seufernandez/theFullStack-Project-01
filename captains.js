@@ -38,6 +38,7 @@ exports.show = function(req,res){
     if (!foundCaptain) {
         return res.send("Cap not found, sorry Marvel stan")
     }
+<<<<<<< HEAD
 
     const captain = {
         ...foundCaptain,
@@ -53,6 +54,11 @@ exports.show = function(req,res){
 
 
 //create
+=======
+     return res.render("captains/show", {captain: foundCaptain}) // lá no html vai receber o objeto "captain" que acabei de declarar e vaicolocar os dados do foundCaptain
+}
+//post
+>>>>>>> b1912fafdcc547e7fcdc70cccc26f143448889c6
 exports.post = function(req, res) {
     
     //VALIDAÇÃO==========================================
@@ -74,6 +80,10 @@ exports.post = function(req, res) {
     }
     
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b1912fafdcc547e7fcdc70cccc26f143448889c6
     //desestruturando objeto req.body pra colocar no data json
     let {
         avatar_url,
