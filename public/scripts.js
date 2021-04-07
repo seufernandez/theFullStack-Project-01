@@ -1,20 +1,26 @@
-const modalOverlay = document.querySelector(".modal-overlay")
-const cards = document.querySelectorAll("#play")//pega todos com a classe card
+//Pegando a Páginal atual; location é responsável por mostrar a localização que a gente está,e o path name vai falar qual caminho que eu estou
+const currentPage = location.pathname
+//Pegando os elementos do header da pág
+const menuItems = document.querySelectorAll('body nav a')
 
-var video
-for (let card of cards) {
-    card.addEventListener("click", function(){
-        const videoId = card.getAttribute("title");//pegando id
-        
-        window.location.href = `/video?id=${videoId}` // quando clicar o js vai mandar o usuário pra página do video correto
-    });
+for (item of menuItems){
+    // EX: se estive na pag de url 3242352 o número 2 , o nome ficará destacado
+    if (currentPage.includes(item.getAttribute("href"))) {
+                            // item.getAttribute("href") = /captains ou /members
+
+
+        item.classList.add("active")
+    }
 }
 
-document.querySelector(".close-modal").addEventListener("click", function(){
-    modalOverlay.classList.remove("active")
-    modalOverlay.querySelector("iframe").src = ""
 
 
-});
+//=================Learning Includes Function==========================
 
+// console.log("/captains/2".includes("captains"));
+                // é com se fosse uma pergunta:
+//  "essa tal frase" tem (inclui) "tal frase"? sim!
 
+//            assim conseguirá seu true ou false
+
+// o includes procura no arquivo todo pelo parametro passado, se tiver é true, senão false 

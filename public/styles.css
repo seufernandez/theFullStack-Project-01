@@ -155,6 +155,7 @@ nav a:hover::after{
     font-size: 1em;
     line-height: 24px;
     letter-spacing: 0.7px;
+    display: inline-block;
 
 }
 
@@ -256,12 +257,30 @@ a.button {
 .table-container thead tr th,
 .table-container tbody tr td{
     text-align: left;
+    vertical-align: middle;
 }
 
 /* colunas do body e colunas do head */
 td, th {
     padding: 16px;
     border-bottom: 1px solid var(--color0-blue);
+    font-weight: bold;
+    
+
+}
+
+td{
+    font-size: 1.2em;
+}
+/*table's head*/
+thead {
+    
+    text-transform: uppercase;
+    background-color: var(--color-purple);
+    color: var(--color-text);
+    font-weight: bold;
+    vertical-align: middle;
+    font-size: 14px;
 
 }
 
@@ -270,23 +289,93 @@ tbody tr:last-child td{
     border-bottom: none;
 }
 
+/*options button*/
+tbody tr td a span   {
+    color: var(--color-purple);
+    font-size: 28px;
+    opacity: 50%;
+}
+
+tbody tr td a span:hover{
+    opacity: 1;
+    transition: 300ms;
+}
 
 
+tbody tr td:first-child span{
+    width: 48px;
+    height: 48px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 25%;
+
+    box-shadow: 3px 1px 6px -4px black;
+    border: 2px solid white;
+}
+
+/* ajustaremos um espaço no pai para que o filho (span) possa aparecer */
+tbody tr td:first-child{
+    
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    align-items: center;
+
+}
 
 
+/*tirando o negrito do segunda fileira da tabela*/
+tbody tr td:nth-child(2){
+
+    font-weight: normal;
+
+}
+
+/* alinhando ao centro os botões options */
+.table-container thead tr th:last-child{
+    text-align:center;
+}
+.table-container tbody tr td:last-child{
+    text-align:center;
+}
 
 
+/*"NEW" button=======*/
+/*o que ele achar de a ali ele pode jogar tranquilo */ 
+.table-container > a{
+    background-color: #301b3f49;
+    color: var(--color-purple);
+    text-decoration: none;
+    padding: 4px;
+    font-size:12px;
+    border-radius: .4em;
+    border:2px solid var(--color-purple);
+
+    margin-top:24px ;
+
+    /*para não ocupar a linha toda nem ficar colado na table..*/
+    display: block;
+}
+ .table-container > a span{
+     padding: 2px;
+ }
 
 
+/*============INFOMESSAGE==========*/
+.infoMessage{
+    display: inline-block;
+}
 
+.infoMessage{
+    font-size: 16px;
+    vertical-align: middle;
+    cursor: pointer;
+}
 
-
-
-
-
-
-
-
+#theInfoMessage{
+    display:inline-block;
+    font-size: 12px;
+    font-weight: lighter;
+}
 
 
 

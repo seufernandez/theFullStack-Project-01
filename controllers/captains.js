@@ -2,9 +2,9 @@
 
 
 const fs = require('fs')//file sistem
-const data = require('./data.json')
+const data = require('../data.json')
 // se caso fosse nescessário o uso de data de aniversário utilizaria o comando abaixo para trazer a calculadora de idade porém a Obra de Douglas Adams não menciona tais origens dos personagens com tantos detalhes
-const { age } = require('./utilities')
+const { age } = require('../utilities')
 
 
 
@@ -38,7 +38,6 @@ exports.show = function(req,res){
     if (!foundCaptain) {
         return res.send("Cap not found, sorry Marvel stan")
     }
-<<<<<<< HEAD
 
     const captain = {
         ...foundCaptain,
@@ -53,12 +52,12 @@ exports.show = function(req,res){
 }
 
 
-//create
-=======
-     return res.render("captains/show", {captain: foundCaptain}) // lá no html vai receber o objeto "captain" que acabei de declarar e vaicolocar os dados do foundCaptain
-}
+exports.create = function (req, res) {
+    return res.render("captains/create");
+  }
+
+
 //post
->>>>>>> b1912fafdcc547e7fcdc70cccc26f143448889c6
 exports.post = function(req, res) {
     
     //VALIDAÇÃO==========================================
@@ -80,10 +79,6 @@ exports.post = function(req, res) {
     }
     
 
-<<<<<<< HEAD
-=======
-
->>>>>>> b1912fafdcc547e7fcdc70cccc26f143448889c6
     //desestruturando objeto req.body pra colocar no data json
     let {
         avatar_url,
@@ -126,10 +121,9 @@ exports.post = function(req, res) {
         fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){ 
         if (err) {return res.send('write file error!')
     }
-    else{
+    
         //vai colocar na url o /captains assim que salvar
         return res.redirect('/captains')
-    }
     })
     //return res.send(req.body);
 }
@@ -195,6 +189,7 @@ exports.put = function (req, res){
     const captain = {
         ...foundCaptain,
         ...req.body,
+        id: Number(req.body.id)// Para retornar o id em formato numérico, pois estava retornando o numero em string
 
     }
 
