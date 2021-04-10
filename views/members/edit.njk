@@ -14,23 +14,23 @@
 
             <form 
                 method="POST"
-                action="/captains?_method=PUT"> {#vai enviar os dados para a pasta instructors #}
+                action="/members?_method=PUT"> {#vai enviar os dados para a pasta instructors #}
                 
-                    <h3>Edit Captain</h3>
+                    <h3>Edit Member</h3>
 
 
-                        {% include 'captains/fields.njk' %}
+                        {% include 'members/fields.njk' %}
 
                             {# deu erro porque o fields nao envia o id, então temos que de alguma forma trazer o id para chegarmos à pag desejada #}
                         <input type="hidden" 
                         name="id" 
-                        value="{{captain.id}}">
+                        value="{{member.id}}">
             </form>
 
-        <form id="form-delete" action="/captains?_method=DELETE" method="post">
+        <form id="form-delete" action="/members?_method=DELETE" method="post">
             <input type="hidden" 
                     name="id" 
-                    value="{{captain.id}}">
+                    value="{{member.id}}">
                     <button type="submit">Delete</button>
         </form>
 

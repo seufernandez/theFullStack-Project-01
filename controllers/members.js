@@ -46,18 +46,21 @@ exports.post = function (req, res) {
 
     // E formando o lastId, para o mesmo não se repetir, ele rodará a seguinte condição à todos novos cadastros
   if (lastMember) {
+    //baseando o novo id agora no número anterior e não mais no tamanho do array de membros
     id = lastMember.id + 1 // para não repetir nenhum id já guardado, pegando justamente o ultimo id e somando mais 1
   }
 
 
 
-
+// exportando (sobrescrevendo) os dados atualizados
    data.members.push({
     id,
     ...req.body,
   });
 
-  //número 2 é a formatação do texto,indentaçõ usando 2 espaços (praficar bonitinho)
+
+
+  //número 2 é a formatação do texto,indentaçõ usando 2 espaços (pra ficar bonitinho)
   fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {
     if (err) return res.send("write file error!")
 
@@ -92,10 +95,10 @@ exports.show = function (req, res) {
   var bloodType = blood.slice(-1)//Ultimo Dígito da string "1"
 
   if ( bloodType == 1 )  {
-     bloodType = " Positive"
+     bloodType = " +"
      blood = blood.slice(0,-1) + bloodType
   }else{
-    bloodType= " Negativo"
+    bloodType= " -"
     blood = blood.slice(0,-1) + bloodType
   }
 
@@ -158,7 +161,7 @@ exports.put = function (req, res) {
     id: Number(req.body.id), // Para retornar o id em formato numérico, pois estava retornando o numero em string
   };
 
-  data.members[index] = member; //index para sabermos a posição do objeto ja existente
+  data.members[index] = member; //jogando o member no array
 
   //atualizando o data
   fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {
