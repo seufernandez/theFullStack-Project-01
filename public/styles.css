@@ -182,7 +182,7 @@ nav a:hover::after{
 
 /*====================forms====================*/
 
-input{
+input, select{
     width: 100%;
     outline-color: var(--color-purple);
     background: #ffffff73;
@@ -271,6 +271,7 @@ td, th {
 
 td{
     font-size: 1.2em;
+    font-weight: normal;
 }
 /*table's head*/
 thead {
@@ -320,15 +321,17 @@ tbody tr td:first-child{
     grid-template-columns: 64px 1fr;
     align-items: center;
 
+    font-weight: bold;
+
 }
 
 
-/*tirando o negrito do segunda fileira da tabela*/
+/* tirando o negrito do segunda fileira da tabela
 tbody tr td:nth-child(2){
 
     font-weight: normal;
 
-}
+} */
 
 /* alinhando ao centro os botões options */
 .table-container thead tr th:last-child{

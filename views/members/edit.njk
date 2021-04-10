@@ -7,7 +7,7 @@
 
         <section 
             class="avatar"
-            style="background: url(https://assets.bigcartel.com/product_images/222985918/Dolphin+-+WM.jpg?auto=format&fit=max&w=1000) no-repeat center center / cover;">
+            style="background: url({{member.avatar_url}}) no-repeat center center / cover;">
         </section>
     
     <section class="details">
@@ -34,12 +34,30 @@
                     <button type="submit">Delete</button>
         </form>
 
+
     </section>
 
 
 
     </div>
 
+        {# js de dentro do html somente de forma experimental #}
+        <script>
+
+            const formDelete = document.querySelector('#form-delete')
+
+            {# ounvindo o evento "submit" #}
+            formDelete.addEventListener('submit', function(event) {
+                //trazendo a caixa de confirm, que retorna t ou f
+                const confirmation = confirm("You really want to delete this Member?")
+
+                //Se não houver confirmação, confirmação = Não:
+                if (!confirmation) {
+                    //cancelando o evento padrão
+                    event.preventDefault()
+                }
+            })
+        </script>
    
 
 

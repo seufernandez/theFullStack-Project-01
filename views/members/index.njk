@@ -7,21 +7,27 @@
             <thead>
             
                 <tr>
-                    <th>Captain</th>
+                    <th>Member</th>
                     <th>Ocupation</th>
+                    <th>height</th>
+                    <th>weight</th>
                     <th>Action</th>
                 </tr>
             </thead>
 
             <tbody>
-            {% for captain in captains %}
+            {% for member in members %}
                 <tr>
                     <td>
-                        <span style="background-image: url({{captain.avatar_url}})"></span>
-                    {{captain.name}}</td>
-                    <td>{{captain.ocupation}}</td>
+                        <span style="background-image: url({{member.avatar_url}})"></span>
+                    {{member.name}}</td>
+                    <td>{{member.ocupation}}</td>
+                    <td>{{member.height}}cm</td>
+                    <td>{{member.weight}}Kg</td>
+
+                    
                     <td><a 
-                        href="/captains/{{captain.id}}">
+                        href="/members/{{member.id}}">   {# settingsButton #}
                             <span 
                             class="material-icons"
                             cursor="pointer"
