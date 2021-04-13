@@ -26,3 +26,4 @@ https://youtu.be/5jI63YtSdTQ
 - JS features used so far: Split, Slice (showing correct date format), Includes (route verification), Intl (date), and other basics features 
 
 Well that's it, I hope you found interesting and Thank you for your time!!
+\
